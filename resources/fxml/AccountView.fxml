@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <MenuButton layoutX="14.0" layoutY="75.0" mnemonicParsing="false" text="Menu">
+        <items>
+          <MenuItem mnemonicParsing="false" text="Transfer" />
+          <MenuItem mnemonicParsing="false" text="Deposit" />
+            <MenuItem mnemonicParsing="false" text="Transection History" />
+        </items>
+      </MenuButton>
+      <TabPane layoutX="111.0" layoutY="88.0" prefHeight="200.0" prefWidth="348.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Cheque Account">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="26.0" text="Balance" />
+                        <Button layoutX="9.0" layoutY="86.0" mnemonicParsing="false" text="Deposit" />
+                        <Button layoutX="96.0" layoutY="86.0" mnemonicParsing="false" text="Withdraw" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Savings Account">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="24.0" layoutY="23.0" text="Savings balance" />
+                        <Button layoutX="24.0" layoutY="73.0" mnemonicParsing="false" text="Deposit funds" />
+                        <Label layoutX="24.0" layoutY="140.0" text="0.05% montly interest" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Investment Account">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="171.0" prefWidth="348.0">
+                     <children>
+                        <Label layoutX="243.0" layoutY="14.0" prefHeight="34.0" prefWidth="41.0" text="Balance" />
+                        <Button layoutX="9.0" layoutY="80.0" mnemonicParsing="false" text="Deposit" />
+                        <Button layoutX="110.0" layoutY="80.0" mnemonicParsing="false" text="Withdraw" />
+                        <Label layoutX="24.0" layoutY="23.0" text="Total invested" />
+                        <Label layoutX="10.0" layoutY="132.0" text="5% montly interest" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Label layoutX="204.0" layoutY="14.0" text="A.M Banking App">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="204.0" layoutY="67.0" text="Accounts" />
+      <ImageView fitHeight="38.0" fitWidth="56.0" layoutX="155.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Users/HP/Downloads/bank-icon-logo-design-vector.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>
