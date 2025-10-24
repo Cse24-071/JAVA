@@ -1,14 +1,14 @@
+package Main;
+
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.fxml.*;
 import javafx.scene.*;
-import javafx.stage.Stage;
 
 public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         FXMLLoader loader = new
-        FXMLLoader(getClass().getResource("/fxml/AccountView.fxml"));
-        loader.setController(this);
+        FXMLLoader(getClass().getResource("/fxml/LoginView.fxml"));
         Parent root = loader.load();
         Scene myScene = new Scene(root,400,400);
         primaryStage.setScene(myScene);

@@ -8,22 +8,23 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<TitledPane animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" text="A.M Banking App" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1">
+<TitledPane animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" text="A.M Banking App" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LoginController">
   <content>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
          <children>
             <Label layoutX="29.0" layoutY="54.0" text="Username" />
-            <TextField layoutX="28.0" layoutY="71.0" promptText="type in username" />
+            <TextField fx:id="usernameField" layoutX="28.0" layoutY="71.0" promptText="type in username" />
             <Label layoutX="31.0" layoutY="103.0" text="Password" />
-            <PasswordField layoutX="31.0" layoutY="120.0" promptText="type in password" />
-            <Button layoutX="31.0" layoutY="207.0" mnemonicParsing="false" text="Login" />
-            <Button layoutX="75.0" layoutY="145.0" mnemonicParsing="false" text="Forgot Password" />
-            <Button layoutX="102.0" layoutY="207.0" mnemonicParsing="false" text="Register" />
+            <PasswordField fx:id="passwordField" layoutX="31.0" layoutY="120.0" promptText="type in password" />
+            <Button fx:id="loginButton" layoutX="31.0" layoutY="207.0" mnemonicParsing="false" onAction="#handleLogin" text="Login" />
+            <Button fx:id="forgotPasswordButton" layoutX="75.0" layoutY="145.0" mnemonicParsing="false" onAction="#handleForgotPassword" text="Forgot Password" />
+            <Button fx:id="registerButton" layoutX="102.0" layoutY="207.0" mnemonicParsing="false" onAction="#handleRegister" text="Register" />
             <Label layoutX="148.0" layoutY="6.0" prefHeight="58.0" prefWidth="200.0" text="Login and start banking">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
+            <Label fx:id="messageLabel" layoutX="260.0" layoutY="75.0" prefHeight="17.0" prefWidth="163.0" />
          </children></AnchorPane>
   </content>
 </TitledPane>
