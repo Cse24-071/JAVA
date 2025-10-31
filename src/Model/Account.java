@@ -1,21 +1,27 @@
-abstract class Account {
+package Model;
+
+public abstract class Account {
+    private String id;
     protected String accountNumber;
     protected double balance;
     protected String branch;
     protected Customer customer;
+    protected String accountType;
 
-    public Account (String accountNumber, double balance, String branch, Customer customer){
+    public Account (String id,String accountNumber, double balance, String branch, Customer customer, String accountType) {
+        this.id = id;
         this.accountNumber = accountNumber;
         this.balance = balance;
         this.branch = branch;
         this.customer = customer;
+        this.accountType = accountType;
     }
 
     public void deposit (double amount){
         balance += amount;
     }
 
-    public abstract void withdraw(double amount);
+    public abstract boolean withdraw(double amount);
 
     public abstract double calculateInterest();
 
@@ -36,4 +42,24 @@ abstract class Account {
             return customer;
 
         }
+
+    public String getCustomerId() {
+        return customer.getId();
+    }
+
+    public String getAccountType() {
+        return accountType;
+    }
+
+    public void setAccountType(String accountType) {
+        this.accountType = accountType;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
     }

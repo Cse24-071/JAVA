@@ -1,22 +1,25 @@
-class InvestmentAccount extends Account implements InterestBearing {
-    private final double interestRate = 0.005;
-    private final double initialDeposit = 500.00;
+package Model;
+
+public class InvestmentAccount extends Account implements InterestBearing {
+     final double interestRate = 0.0005;
+     final double initialDeposit = 500.00;
 
 
-    public InvestmentAccount(String accountNumber, double balance, String branch, Customer customer){
-        super(accountNumber, balance, branch, customer);
+    public InvestmentAccount(String id, String accountNumber, double balance, String branch, Customer customer){
+        super(id, accountNumber, balance, branch, customer,"INVESTMENT");
         if (balance < initialDeposit){
             System.out.println("Deposit must be atleast BWP500.00");
         }
     }
 
     @Override
-    public void withdraw(double amount){
-        if (amount <= balance){
+    public boolean withdraw(double amount){
+        if (amount > 0 && amount <= balance) {
             balance -= amount;
-        }else {
-            System.out.println("insufficient funds");
+            return true;
         }
+        return false;
+
     }
 
     @Override

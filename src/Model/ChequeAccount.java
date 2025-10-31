@@ -1,20 +1,23 @@
-class ChequeAccount extends Account{
-    private String campanyName;
-    private String campanyAddress;
+package Model;
 
-    public ChequeAccount(String accountNumber, double balance, String branch, Customer customer, String employerName, String employerAddress){
-        super(accountNumber, balance, branch, customer);
+public class ChequeAccount extends Account {
+    final String campanyName;
+    final String campanyAddress;
+
+    public ChequeAccount(String id,String accountNumber, double balance, String branch, Customer customer, String employerName, String employerAddress){
+        super(id,accountNumber, balance, branch, customer,"cheque");
         this.campanyName = employerName;
         this.campanyAddress = employerAddress;
     }
 
     @Override
-    public void withdraw(double amount){
-        if (amount <= balance){
+    public boolean withdraw(double amount){
+        if (amount > 0 && amount <= balance) {
             balance -= amount;
-        }else {
-            System.out.println("Insufficient funds");
+            return true;
         }
+        return false;
+
     }
 
     @Override

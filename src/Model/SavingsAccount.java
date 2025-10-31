@@ -1,13 +1,20 @@
-class SavingsAccount extends Account implements InterestBearing{
-    private final double interestRate = 0.0005;
+package Model;
 
-    public SavingsAccount(String accountNumber, double balance, String branch, Customer customer){
-        super(accountNumber, balance, branch, customer);
+public class SavingsAccount extends Account implements InterestBearing {
+     final double interestRate = 0.0005;
+
+    public SavingsAccount(String id,String accountNumber, double balance, String branch, Customer customer){
+        super(id,accountNumber, balance, branch, customer,"SAVINGS");
     }
 
     @Override
-    public void withdraw(double amount){
-        System.out.println("Withdrawals from Savings Account not allowed");
+    public boolean withdraw(double amount){
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+            return true;
+        }
+        return false;
+
     }
 
     @Override
