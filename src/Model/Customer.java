@@ -1,5 +1,8 @@
 package Model;
 
+import java.util.IdentityHashMap;
+import java.util.UUID;
+
 public class Customer {
     String Id;
     String firstName;
@@ -7,44 +10,30 @@ public class Customer {
     String email;
     String address;
     String phoneNumber;
+    String username;
+    String password;
 
     Account[] accounts;
     int accountCount;
 
-    // Constructor with ID (used when reading from database)
-    public Customer(String Id, String firstName, String lastName, String email, String address, String phoneNumber){
+// Constructor without ID (used when creating new customers)
+    public Customer(String Id, String firstName, String lastName, String email, String address, String phoneNumber, String username, String password) {
         this.Id = Id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.address = address;
         this.phoneNumber = phoneNumber;
-        this.accounts = new Account[3];
-        this.accountCount = 0;
-    }
-// Constructor without ID (used when creating new customers)
-    public Customer(String firstName, String lastName, String email, String address, String phoneNumber){
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.address = address;
-        this.phoneNumber = phoneNumber;
+        this.username = username;
+        this.password = password;
         this.accounts = new Account[3];
         this.accountCount = 0;
     }
 
-    public void addAccount(Account account){
-        if (accountCount < accounts.length){
-            accounts[accountCount++] = account;
-        }
-    }
-
-    public Account[] getAccounts(){
-        return accounts;
-    }
-
-    public String getFullName(){
-        return firstName+""+lastName;
+    // No-argument constructor (required for JavaFX and DAO instantiation)
+    public Customer() {
+        this.accounts = new Account[3];
+        this.accountCount = 0;
     }
 
     // Getters and setters for JDBC
@@ -65,5 +54,11 @@ public class Customer {
 
     public String getPhoneNumber() { return phoneNumber; }
     public void setPhoneNumber(String phoneNumber) { this.phoneNumber = phoneNumber; }
+
+    public String getUsername() { return username; }
+    public void setUsername(String username) { this.username = username; }
+
+    public String getPassword() { return password; }
+    public void setPassword(String password) { this.password = password; }
 
 }

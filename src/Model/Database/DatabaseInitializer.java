@@ -3,6 +3,9 @@ package Model.Database;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
+import java.sql.SQLException;
+
+
 
 public class DatabaseInitializer {
     public static void main(String[] args) {
@@ -11,6 +14,9 @@ public class DatabaseInitializer {
         try (Connection conn = DriverManager.getConnection(url);
              Statement stmt = conn.createStatement()) {
 
+
+
+
             String createCustomers = """
                 CREATE TABLE IF NOT EXISTS customers (
                     id TEXT PRIMARY KEY,
@@ -18,7 +24,9 @@ public class DatabaseInitializer {
                     last_name TEXT,
                     email TEXT,
                     address TEXT,
-                    phone TEXT
+                    phone_number TEXT,
+                    username TEXT,
+                    password TEXT
                 );
             """;
 
@@ -48,7 +56,9 @@ public class DatabaseInitializer {
                 );
             """;
 
+
             stmt.execute(createCustomers);
+
             stmt.execute(createAccounts);
             stmt.execute(createTransactions);
 

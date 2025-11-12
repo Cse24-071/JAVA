@@ -5,7 +5,9 @@
       <root url="jar://$USER_HOME$/Downloads/sqlite-jdbc-3.50.3.0.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/Downloads/sqlite-jdbc-3.50.3.0.jar!/" />
+    </SOURCES>
     <jarDirectory url="file://$PROJECT_DIR$/../../../../Program Files/Java/javafx-sdk-24.0.1/lib" recursive="false" />
   </library>
 </component>
